@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- <script>
+      let sum = 0;
+      for (let i = 0; i <= 100; i += 2) {
+        sum = sum + i;
+      }
+      document.write("1부터 100까지 짝수합 : " + sum + "<br>");
+      document.write("1부터 100까지의 짝수의 합 : " "1부터 100까지의 홀수의 합
+    :")
+    </script> -->
+    <script>
+      let even = 0;
+      let odd = 0;
+      for (let i = 1; i <= 100; i++) {
+        if (i % 2 == 0) {
+          even += i;
+        } else {
+          odd += i;
+        }
+      }
+      document.write(
+        "1부터 100까지의 짝수의 합 : " +
+          even +
+          "<br>1부터 100까지의 홀수의 합 : " +
+          odd +
+          "<br>"
+      );
+    </script>
+  </head>
+  <body></body>
+</html>

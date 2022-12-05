@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let a = prompt("지역을 입력해주세요")
+        let num;
+        let b = "서울";
+        let c = "대전";
+        let d = "부산";
+
+        if (a == b || a == "seoul" || a == "Seoul" || a == "SEOUL"){
+            num = "02";
+            a = "서울";
+        }
+        else if (a == c || a == "dajeon"){
+            num = "042";
+            a = "대전";
+        }
+        else if (a == d || a == "busan"){
+            num = "051";
+            a = "부산";
+        }
+        else{
+            num = "등록되지 않은 지역"
+        }
+        document.write("입력하신 지역은 "+a+"이고 지역번호는"+num+"입니다.")
+    </script>
+    
+</body>
+</html>

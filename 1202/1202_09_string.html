@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .on {
+        background: #029;
+        padding: 10px;
+        color: #eee;
+      }
+      .active {
+        background: #569;
+        padding: 10px;
+        color: #eee;
+      }
+    </style>
+    <script>
+      function fnc() {
+        let x = document.getElementById("div1");
+        let y = x.className;
+        if (x.className == "on") {
+          //x.className = x.className.replace("on", "active");
+          //x.className = x.className.concat(" active");
+          x.className += " active";
+        } else {
+          x.className = "on";
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <div id="div1" class="on">friday!</div>
+    <button onclick="fnc()">change</button>
+  </body>
+</html>

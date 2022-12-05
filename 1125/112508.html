@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: grid;
+            align-items: center;
+            justify-items: center;
+            padding: 50px;
+        }
+        .s{
+
+            text-align: center;
+        }
+        .active .wrap{
+            position: absolute;
+            
+            
+        }
+        .active{
+            color: #f00;
+        }
+        #popup{
+            position: relative;
+            display: none;
+           
+            
+        }
+        #popupa:hover{
+            
+        }
+        #popupa{
+            font-size: 50px;
+            top: 0;
+            color: #ccc;
+            background-color: #333;
+            height: 100px;
+            padding: 0 50px;
+            line-height: 80px;
+            border-radius: 5px;
+            
+        }
+        .tri{
+            position: absolute;
+            bottom: -20px;
+            left: 45%;
+            border-top: 10px solid #333;
+            border-bottom: 10px solid #fff;
+            border-left: 10px solid #fff;
+            border-right: 10px solid #fff;
+        }
+    </style>
+</head>
+<body>
+    <div id=wrap>
+        <div id="popup">
+            <div id="popupa">
+                popup
+            </div>
+            <div class="tri">
+            </div>
+        </div>
+    </div>
+    <div class="s" onclick="c()">
+        <h1>popup</h1>
+        <p>click me to toggle the popup!</p>
+    </div>
+    <script>
+        function c(){
+            popup.style.display = "flex";
+            popup.toggle("active");
+        }
+       
+    </script>
+</body>
+</html>

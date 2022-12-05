@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      let color = [
+        "#560",
+        "#561",
+        "#562",
+        "#563",
+        "#564",
+        "#565",
+        "#566",
+        "#567",
+        "#568",
+        "#569",
+        "#56a",
+        "#56b",
+        "#56c",
+        "#56d",
+        "#56e",
+        "#56f",
+      ];
+      let i = 0;
+      function a() {
+        i++;
+        if (i > 16) {
+          i = 0;
+        }
+        document.querySelector("body").style.backgroundColor = color[i];
+        console.log(i);
+      }
+      //   function a() {
+      //     for (let i = 0; i <= 10; i++)
+      //       document.querySelector("body").style.backgroundColor = color[i];
+      //       //제일 처음에 오는 p태그만 선택
+      //   }
+    </script>
+  </head>
+  <body>
+    <button onclick="a()">배경색 바꾸기</button>
+  </body>
+</html>

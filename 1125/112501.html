@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let x = 123;
+        let y = "123";
+        document.write(x + "<br>" +y +"<br>");
+        //문자 숫자 구분 못함. 변수는 "" 사용하지 않음. 문자는 "" 반드시 사용
+        document.write(typeof x + "<br>" +typeof y +"<br>");
+        //typeof > 문자면 string / 숫자면 number 반환
+        document.write(Number("123")+"<br>"+String(123)+"<br>");
+        //number "123">123 // string123 . "123"
+        document.write(Number("javascript")+"<br>")
+        //숫자로 받아야 하는데 문자라서 nan 출력됨
+        document.write(x+y, "<br>")
+        //y가 문자라서 덧셈이 안되고 123123으로 출력됨
+        document.write(x + Number(y),"<br>")
+        //y를 숫자로 바꿔서 246 출력
+
+        let c = 10.554;
+        let d = "34 45 50";
+        let e = parseFloat(c);
+        document.write(parseFloat(x),"<br>")
+        document.write(parseFloat(c),"<br>")
+        document.write(parseFloat(d),"<br>")
+        //변수를 가져다가 똑같이 숫자로 반환해줌. 여러개중에선 가장 앞에 잇는거  
+        document.write(parseInt(c),"<br>")
+        //parseint 소수점 뒤를 없애고 정수로 변경
+        document.write(typeof e,"<br>");
+        //parsefloat,int 모두 숫자
+        document.write(parseInt(c)+parseInt(c),"<br>");
+        //덧셈 연산이 되기 때문에 parseintc는 숫자로 인식된 것이 맞음
+        document.write(String(10+10)+String(10),"<br>");
+        //?산술연산이랑 결합연산인랑 뭐가 다른건지 찾아볼것. 
+        //중간에 있는 10+10일 때는 +가 산술연산으로 사용됨
+        // String(10+10)+String(10)가운데의 +는 결합연산 
+        document.write(Number("10")+Number("10"),"<br>");
+        //"10"을 number사용해서 숫자로 변경 +산술연산 , 20 반환
+        document.write(x.toString()+x.toString()+"<br>")
+        //x는 숫자123인데 문자"123"으로 변경 후 +로 나란히 결합연산 
+        document.write((123).toString()+(123+10).toString()+"<br>")
+        //숫자 123 > "123" /  123+10은 결합연산 후 "123" / 둘을 결합연산 123133출력
+        let a = 1230000000;
+        let b = a.toExponential();
+        document.write(typeof b + "<br>"+b+"<br>");
+        //1,23*10의 9제곱 
+        let aa = 0.000000123;
+        document.write(typeof b + "<br>"+aa+"<br>");
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

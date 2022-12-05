@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      ul {
+        list-style: none;
+      }
+      .wrap {
+        width: 1280px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 200px auto;
+      }
+      .right {
+        border: 1px solid #333;
+        border-left: none;
+      }
+      .left > ul > li {
+        padding: 20px 10px;
+        border: 1px solid #333;
+        border-top: none;
+      }
+      .left > ul > li:hover {
+        cursor: pointer;
+      }
+      .left > ul > li:first-child {
+        border-top: 1px solid #333;
+      }
+      .right > h1 {
+        height: 249px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="left">
+        <ul>
+          <li class="btn" onmouseover="a(0)">content1</li>
+          <li class="btn" onmouseover="a(1)">content2</li>
+          <li class="btn" onmouseover="a(2)">content3</li>
+          <li class="btn" onmouseover="a(3)">content4</li>
+        </ul>
+      </div>
+      <div class="right">
+        <h1 class="con">content1</h1>
+        <h1 class="con">content2</h1>
+        <h1 class="con">content3</h1>
+        <h1 class="con">content4</h1>
+      </div>
+    </div>
+    <script>
+      window.open("1201tab.html", "함수연습", "width=500,height=500");
+      let col = ["#554", "#564", "#574", "#584"];
+      let btn = document.getElementsByClassName("btn");
+      let con = document.getElementsByClassName("con");
+      function a(j) {
+        for (let i = 0; i <= 3; i++) {
+          con[i].style.backgroundColor = col[i];
+          btn[i].style.backgroundColor = col[i];
+          con[i].style.display = "none";
+          con[j].style.display = "block";
+        }
+      }
+      a(0);
+    </script>
+  </body>
+</html>

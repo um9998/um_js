@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      //   function a() {
+      //     for (let i = 1; i <= 5; i++) {
+      //       document.getElementById("p01").innerHTML = i + "<br>";
+      //     }
+      //   }
+      //   let j = 0;
+      //   function b() {
+      //     if (j == 10) return;
+      //     j++;
+      //     document.write(j + "안녕하세요<br>");
+      //   }
+      //   setInterval(function () {
+      //     b();
+      //   }, 1000);
+
+      let j = 1;
+      function a() {
+        if (j == 10) return;
+        j++;
+        if (j % 2 == 0) {
+          document.write(j + "<br>");
+        }
+      }
+      setInterval(function () {
+        a();
+      }, 500);
+
+      //   let cc = 0;
+      //   function c() {
+      //     if (cc == 10) return;
+      //     cc++;
+      //     document.write(cc + "안녕하세요<br>");
+      //   }
+      //   setInterval(function () {
+      //     c();
+      //   }, 1000);
+    </script>
+  </head>
+  <body>
+    <!-- <p id="p01"></p> -->
+  </body>
+</html>

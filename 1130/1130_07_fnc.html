@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>for</title>
+    <style></style>
+    <script>
+      function a() {
+        for (let i = 1; i <= 5; i++) {
+          document.getElementById("p01").innerHTML = i + "<br>";
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <p id="p01"></p>
+    <button onclick="a()">1부터 5까지의 숫자-->for구문</button>
+    <button onclick="b()">1부터 5까지의 숫자-->if구문</button>
+  </body>
+</html>

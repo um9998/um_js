@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>String</title>
+    <script>
+      //변수 123456-1234567
+      let txt6 = "123456 - 1234567";
+      document.write("123456 - 1" + "******" + "<br>");
+      document.write(txt6.slice(8) + "<br>");
+      let txt7 = txt6.slice(8);
+      document.write(txt6.replace(txt7, "*******") + "<br>");
+      let txt8 = txt6.slice(-6);
+      document.write(txt6.replace(txt8, "*******") + "<br>");
+      let txt9 = txt6.slice(-7);
+      document.write(txt6.replace(txt9, "*******") + "<br>");
+    </script>
+  </head>
+  <body></body>
+</html>

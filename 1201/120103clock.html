@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #content {
+        width: 630px;
+        height: 630px;
+        margin: 100px auto;
+      }
+      .clock {
+        list-style: none;
+        position: relative;
+        width: 100%;
+        height: 100%;
+      }
+      .clock li {
+        position: absolute;
+        width: 630px;
+        height: 630px;
+      }
+      .base {
+        background: url(../images/clock_bg.png);
+      }
+      .hour {
+        background: url(../images/hour.png);
+      }
+      .min {
+        background: url(../images/minute.png);
+      }
+      .sec {
+        background: url(../images/second.png);
+        background-size: 630px 630px;
+      }
+      .cent {
+        background: url(../images/center_bg.png);
+      }
+    </style>
+  </head>
+  <body>
+    <div id="content">
+      <ul class="clock">
+        <li class="base"></li>
+        <li class="hour"></li>
+        <li class="min"></li>
+        <li class="sec"></li>
+        <li class="cent"></li>
+      </ul>
+    </div>
+    <button id="start()">start</button>
+    <button id="stop()">stop</button>
+    <script>
+      function clock() {
+        let today = new Date();
+        let hour = today.getHours();
+        let min = today.getMinutes();
+        let sec = today.getSeconds();
+        time(hour, min, sec);
+      }
+      function time(h, m, s) {
+        h = (360 / 12) * h + 0.5 * m;
+        m = (360 / 60) * m;
+        s = (360 / 60) * s;
+        let hour = document.querySelector(".hour");
+        let min = document.querySelector(".min");
+        let sec = document.querySelector(".sec");
+        hour.style.transform = "rotate(" + h + "deg)";
+        min.style.transform = "rotate(" + m + "deg)";
+        sec.style.transform = "rotate(" + s + "deg)";
+      }
+      setInterval(clock, 1000);
+      clock();
+
+      let Interval = setInterval(clock, 1000);
+      document.getElementById("stop").onclick = function () {
+        clearInterval(Interval);
+      };
+
+      document.getElementById("start").onclick = function () {
+        Interval = setInterval(clock, 1000);
+      };
+    </script>
+  </body>
+</html>

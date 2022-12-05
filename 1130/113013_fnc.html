@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      h1 {
+        color: #eee;
+      }
+      .wrap {
+        text-align: center;
+        background-color: #333;
+        padding: 50px;
+      }
+      img {
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+        margin: 30px auto;
+      }
+      button {
+        cursor: pointer;
+      }
+    </style>
+    <script>
+      //함수 만들기
+      //slide의 src와 alt 속성의 이름중 숫자를 바꿔주는 함수
+      //html의 이미지를 스크립트로 끌어와야함
+
+      //변수 slide는 html에서 id slide인 요소를 가져옴
+
+      //변수 하나 더 지정. photon , n은 1~6을 넘어가지 않음.
+      //pre를 클릭하면 숫자가 작아지니까n-- / next 클릭하면 숫자가 커지니까n++
+      let n = 1;
+      function pre() {
+        let slide = document.getElementById("slide");
+        slide.setAttribute("src", "images/photo" + n + ".jpg");
+        slide.setAttribute("alt", "photo" + n);
+        n--;
+        if (n >= 6) n = 6;
+        else(n == 0){
+            break
+        }
+      }
+      function next() {
+        let slide = document.getElementById("slide");
+        slide.setAttribute("src", "images/photo" + n + ".jpg");
+        slide.setAttribute("alt", "photo" + n);
+        n++;
+        if (n >= 6) n = 6;
+      }
+    </script>
+  </head>
+  <body>
+    <!-- 1. 제목태그 2. 버튼 3. 이미지
+    스크립트 : 이전을 누르면 이전사진으로 다음을 누르면 다음 사진으로
+사진은 photo1~6까지, 끝까지 넘기면 더이상 넘어가지 않음.  -->
+    <div class="wrap">
+      <h1>제목</h1>
+      <button onclick="pre()">pre</button>
+      <button onclick="next()">next</button>
+      <div><img src="images/photo1.jpg" alt="photo1" id="slide" /></div>
+    </div>
+  </body>
+</html>

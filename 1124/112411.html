@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css/all.css">
+    <title>Document</title>
+    <style>
+         .fa-solid {
+            font-size: 150px;           
+            cursor: pointer;
+            color: #ccc;
+        }
+         .fa-solid:hover{
+            color: #079;
+        }
+        
+    </style>
+</head>
+<body>
+    <!-- <i class="fa-solid fa-face-thinking"></i> -->
+    <i onclick="f()" class="fa-solid fa-thumbs-down"></i>
+    <script>
+        let icon = document.getElementsByClassName("fa-thumbs-down")[0].classList;
+         function f() {
+            //  icon.toggle("fa-thumbs-up");
+             icon.toggle("fa-face-thinking ")
+         }
+     </script>
+</body>
+</html>

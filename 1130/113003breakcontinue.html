@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      let text3 = "";
+      let j = 9;
+      do {
+        text3 += "<br>The number is " + j;
+        j--;
+        if (j == 0) break; //참인 실행문만 있으면 중괄호 생략 가능
+      } while (j < 10);
+      document.write(text3 + "<br><br>");
+
+      let text = "";
+      for (let i = 0; i < 10; i++) {
+        if (i == 3) {
+          break;
+        }
+        text += "the number is " + i + "<br>";
+      }
+      document.write(text + "<br><br>");
+
+      let text2 = "";
+      for (let a = 0; a < 10; a++) {
+        if (a === 3) {
+          continue;
+        }
+        text2 += "the number is " + a + "<br>";
+      }
+      document.write(text2 + "<br><br>");
+    </script>
+  </head>
+  <body></body>
+</html>

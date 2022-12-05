@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let a = confirm("do you like javascript?")
+        if (a == true ) {
+            console.log(a);
+            document.write("yes!<br>");
+        }
+        else {
+            console.log(a);
+            document.write("nope!<br>");
+        }
+
+        let b = prompt("점수를 입력해주세요");
+        confirm("입력한 점수는"+b+"점입니다. 맞습니까?");
+        let bb;
+
+        if (b >= 90) {
+            bb="A"
+        }
+        else if (b >= 80) {
+            bb="B"
+        }
+        else if (b >= 70) {
+            bb="C"
+        }
+        else if (b >= 60) {
+            bb="D"
+        }
+        else if (b >= 50) {
+            bb="E"
+        }
+        else{
+            bb="F"
+        }
+        document.write("당신은" +bb+ "학점입니다");
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

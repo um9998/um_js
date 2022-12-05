@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+        #popup {
+            position: fixed;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%,-50%);
+            background-color: #eee;
+        }
+    </style>
+    
+</head>
+<body>
+    <button id="btn" onclick="show()">open modal</button>
+    <div id="popup">
+        <div class="pop">
+            <a href="javascript:void(0)" id="close">X</a>
+            <p>contentscontentscontentscontentscontents</p>
+        </div>
+
+    </div>
+    <script>
+        let modal = document.getElementById("popup");
+        let btn = document.getElementById("btn");
+       btn.onclick = function() {
+        if(modal.style.display == "none"){
+            modal.style.display = "block";
+
+        } else {
+            modal.style.display = "none";
+       }
+    }
+       
+    </script>
+</body>
+</html>

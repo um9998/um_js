@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      function a() {
+        alert("당신의 폐가 당신을 싫어합니다");
+        document.querySelector("#content").style.backgroundColor = "#ff9"; //제일 처음에 오는 p태그만 선택
+      }
+      function b() {
+        alert("당신의 폐가 당신을 좋아합니다");
+      }
+    </script>
+  </head>
+  <body>
+    <p class="p01">담배를 피우십니까?</p>
+    <button onclick="a()">예</button>
+    <button onclick="b()">아니오</button>
+    <p class="p01">문단태그</p>
+    <p class="p01">문단태그</p>
+    <p class="p01" id="content">문단태그</p>
+  </body>
+</html>

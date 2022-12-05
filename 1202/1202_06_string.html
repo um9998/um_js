@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      //   let x = "abcdefff"
+      //   document.write(x.search("b") + "<br>" + x.indexOf("b") + "<br>");
+      let userEmail = prompt("이메일주소");
+      let arr = [".com", "co.kr", ".net", ".or.kr", ".go.kr", "ac.kr"];
+      let check1 = false;
+      let chect2 = false;
+      if (userEmail.indexOf("@") > 0) {
+        check1 = true;
+      }
+      let len = arr.length;
+      for (let i = 0; i < len; i++) {
+        if (userEmail.indexOf(arr[i]) > 0) {
+          chect2 = true;
+        }
+      }
+      if (check1 == true && chect2 == true) {
+        document.write(userEmail);
+      } else {
+        alert("이메일형식잘못됨");
+      }
+    </script>
+  </head>
+  <body></body>
+</html>

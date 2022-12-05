@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //const person = {firstname:"ko", lastname:"youmin", age:"20",fullname:function()(return this.first + " "+this.last)}
+        
+        const person = {
+            firstname : "ko",
+            lastname : "youmin",
+            age : "20",
+            fullname : function() {
+                return this.firstname + " "+ this.lastname;
+            }
+        };
+        //let firstname = "ko";속성하나밖에 안드감
+        //let lastname = "youmin";속성하나밖에 안드감
+        //let age = "20";
+        //let fullname = firstname + " " + lastname
+        //let을 사용하려면 변수를 네개나 만들어야함 ㅠ! 
+        //const는 변수에 여러가지 속성과 속성값을 설정할 수 있음. 
+        //document.write(person.fullname()+"<br>");
+        //document.write(person.fullname+"<br>");
+        const cars = {};
+        cars.model = "소형";
+        cars.price = 1000000;
+        cars.color = "black";
+        document.write(cars.color+"<br>")
+
+        let man = new Object();
+        man.firstname ='johm';
+        man.lasttname ='doe';
+        man.fnc = function(){
+            document.write(man.firstname +"냐냐"+ man.lastname);
+        }
+        man.fnc();
+      
+    </script>
+    </script>
+</head>
+<body>
+
+</body>
+</html>

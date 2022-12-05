@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .ac{
+            background-color: #ccc;
+        }
+    </style>
+</head>
+<body>
+    <button onclick="fnc()">try it</button>
+    <p id="aa">please visit microsoft</p>
+    <script>
+        function fnc(){
+            let a = document.getElementById("aa").innerHTML;
+            let b =  document.getElementById("aa").innerHTML = a.replace("microsoft","W3School");
+            document.write(b);
+            let c = document.write(b);
+            b.toggle("ac");
+        }
+        
+    </script>
+</body>
+</html>

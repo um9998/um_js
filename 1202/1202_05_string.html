@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      let a = prompt("이메일입력");
+      let arr = [".com", "co.kr", ".net", ".or.kr", ".go.kr", "ac.kr"];
+      let b = a.match("@");
+      let c = a.search(arr);
+      //document.write(b);
+      if (b == null || c == null) {
+        alert("이메일 형식이 잘못됨");
+      } else {
+        document.write("성공");
+      }
+    </script>
+  </head>
+  <body></body>
+</html>

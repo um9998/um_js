@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let a = prompt("성함?");
+        let b = prompt("키?");
+        let c = prompt("체중?");
+        confirm(a+"님의 키는"+b+"cm이고 체중은"+c+"kg맞습니까")
+        let d = (b*b)/10000;
+        let e = c/d
+        let result;
+        document.write(a+"님의 키는"+b+"cm이고 체중은"+c+"kg이고 BMI는" +e+ "입니다.<br><br>");
+
+        if (e <= 18.5) {
+            result="저체중"
+        }
+        else if ( e <= 23) {
+            result="정상"
+        }
+        else if (e <= 29) {
+            result="과체중"
+        }
+        else {
+            result="비만"
+        }
+        document.write(a+"님은 "+result+" 입니다.")
+    </script>
+</head>
+<body>
+</body>
+</html>

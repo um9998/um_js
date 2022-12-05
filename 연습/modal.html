@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../css/all.css">
+    <style>
+        button{
+            cursor: pointer;
+        }
+        #modal{
+            display: none;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <!-- 만들거
+    1. 버튼 2. 모달화면 -->
+
+    <button onclick="f()">취업가능?</button>
+    <div id="modal">
+        <img src="img/a.jpg" alt="aa" >
+    </div>
+    <div onclick="h()">
+        히히<i class="fa-solid fa-cloud"></i>
+    </div>
+
+    <script>
+        let modal = document.getElementById("modal");
+        function f(){
+            modal.style.display = "flex";
+        }
+        function h(){
+            modal.style.display = "none";
+        }
+        alert("안뇽안ㅇ용?");
+        prompt("글자를 쓸 수 있는 프롬프트");
+
+        let a =  confirm("확인해주십쇼");
+        let result = a ? "안녕" : "앵냉";
+        document.write(result);
+        
+    </script>
+</body>
+</html>

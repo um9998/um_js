@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //let x = Date();
+        let x = new Date();
+        //객체와 속성, 객체와 메소드를 연결 할 때에는 (.) 으로 연결합니다
+
+        document.write(x+"<br>")
+        document.write("년도 : ",x.getFullYear(),"<br>");
+        document.write("월 : ",x.getMonth()+1,"<br>");
+        document.write("일 : ",x.getDate(),"<br>");
+        document.write("요일 : ",x.getDay(),"<br>");
+        
+        document.write("hour : ",x.getHours(),"<br>");
+        document.write("hour : ",x.getMinutes(),"<br>");
+        document.write("Seconds : ",x.getSeconds(),"<br>");
+        document.write("Milliseconds : ",x.getMilliseconds(),"<br>");
+        document.write("시간 : ",x.getTime(),"<br>");
+        let s = x.getSeconds() < 10 ? "0"+x.getSeconds():x.getSeconds();
+        document.write("시간s : " + x.getHours()+":" + x.getMinutes() + ":" + s +"<br>");
+        document.write("오늘날짜 : " ,x.getFullYear(),"년", x.getMonth()+1,"월",x.getDate(),"일<br>");
+        
+        location.reload();
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

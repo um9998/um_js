@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .tabcontent {
+        color: #fff;
+        padding: 50px;
+        text-align: center;
+      }
+      .tablink {
+        float: left;
+        width: 25%;
+        background-color: #555;
+        text-align: center;
+        padding: 10px 0;
+        color: #fff;
+        cursor: pointer;
+      }
+      .tablink:hover {
+        background-color: #777;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="tabcontent">
+      <h1>content1</h1>
+    </div>
+    <div class="tabcontent">
+      <h1>content2</h1>
+    </div>
+    <div class="tabcontent">
+      <h1>content3</h1>
+    </div>
+    <div class="tabcontent">
+      <h1>content4</h1>
+    </div>
+    <p class="tablink" onclick="a(0)">content1</p>
+    <p class="tablink" onclick="a(1)">content2</p>
+    <p class="tablink" onclick="a(2)">content3</p>
+    <p class="tablink" onclick="a(3)">content4</p>
+    <script>
+      let col = ["#564", "#565", "#566", "#567"];
+      let con = document.getElementsByClassName("tabcontent");
+      let btn = document.getElementsByClassName("tablink");
+
+      function a(j) {
+        for (let i = 0; i <= 3; i++) {
+          con[i].style.backgroundColor = col[i];
+          btn[i].style.backgroundColor = col[i];
+          con[i].style.display = "none";
+          con[j].style.display = "block"; //n매개변수를 가져와야함
+        }
+      }
+      a(0); //open은 예약돼있어용
+    </script>
+  </body>
+</html>
