@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      #div1 {
+        text-align: center;
+        height: 1000px;
+        position: relative;
+      }
+      #div1 > h1 {
+        padding: 50px;
+      }
+      #div2 {
+        width: 500px;
+        height: 1000px;
+        margin: 0 auto;
+      }
+      #div2 > img {
+        width: 100%;
+      }
+
+      @keyframes slideup {
+        0% {
+          opacity: 0;
+          transform: translateY(70%);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      @keyframes slidedown {
+        0% {
+          opacity: 0;
+          transform: translateY(0);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(70%);
+        }
+      }
+      .slideup {
+        animation: slideup;
+        animation-duration: 1s;
+        animation-fill-mode: forwards;
+      }
+      .slidedown {
+        animation: slidedown;
+        animation-duration: 1s;
+        animation-fill-mode: forwards;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="div1">
+      <h1>onscroll</h1>
+    </div>
+    <hr />
+    <div id="div2">
+      <img src="../images/photo2.jpg" alt="photo2" id="photo2" />
+    </div>
+    <script>
+      window.onscroll = function () {
+        let ht = document.documentElement.scrollTop;
+        if (ht > 350) {
+          document.getElementById("photo2").className = "slideup";
+        } else {
+          document.getElementById("photo2").className = "slidedown";
+        }
+      };
+    </script>
+  </body>
+</html>
