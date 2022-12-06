@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <script>
+      let color = [
+        "#564",
+        "#589",
+        "#567",
+        "#546",
+        "#574",
+        "#584",
+        "#526",
+        "#699",
+        "#587",
+        "#549",
+        "#579",
+        "#587",
+      ];
+      let a = color.length;
+      function ch_color() {
+        let i = Math.floor(Math.random() * a);
+        document.querySelector("body").style.backgroundColor = color[i];
+      }
+    </script>
+  </head>
+  <body>
+    <button id="bg" onclick="ch_color()">배경색바꾸기</button>
+  </body>
+</html>
