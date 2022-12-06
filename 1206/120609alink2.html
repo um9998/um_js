@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <a href="https://naver.com" id="google">냐냐냐</a>
+    <script>
+      let txt = document.getElementById("google");
+      function myfnc(e) {
+        e.preventDefault();
+        location.href = "http://www.google.com";
+      }
+      txt.onclick = function (a) {
+        myfnc(a);
+      };
+    </script>
+  </body>
+</html>
