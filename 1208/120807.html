@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      ul {
+        list-style: none;
+      }
+      a {
+        text-decoration: none;
+        color: #ccc;
+      }
+      body {
+        font: 1em Arial, Helvetica, sans-serif;
+      }
+      #wrap {
+        width: 500px;
+        margin: 0 auto;
+      }
+      ul li {
+        float: left;
+        width: 25%;
+
+        text-align: center;
+      }
+      ul li a {
+        display: block;
+        padding: 10px 0;
+      }
+      ul li a:hover {
+        color: #000;
+        background: #eee;
+      }
+      #photo img {
+        width: 500px;
+      }
+    </style>
+    <script src="../js/jquery-3.6.1.js"></script>
+    <script>
+      $(function () {
+        //     $("ul li:nth-child(1) a").click(function () {
+        //       $("#photo img").attr("src", "../images/photo1.jpg");
+        //     });
+        //     $("ul li:nth-child(2) a").click(function () {
+        //       $("#photo img").attr("src", "../images/photo2.jpg");
+        //     });
+        //     $("ul li:nth-child(3) a").click(function () {
+        //       $("#photo img").attr("src", "../images/photo3.jpg");
+        //     });
+        //     $("ul li:nth-child(4) a").click(function () {
+        //       $("#photo img").attr("src", "../images/photo4.jpg");
+        //     });
+        //   });
+        //let txt2 = txt1.replace("오늘은", "내일은")
+        //;리플레이스 사용해서 1만 추출해서 2341로 변경
+
+        $("ul li a").click(function (e) {
+          //   let txt1 = $(this).text();
+          //   let txt2 = txt1.substring("5");
+          //   let txt3 = txt1.replace(txt2, +txt2);
+          //   let a = "../images/" + txt3 + ".jpg";
+          //   $("#photo img").attr("src", a);
+          //   console.log(a);
+          //     e.preventDefault()
+          //   let txt = $(this).text();
+          //   let img_path = $("img").attr("src");
+          //   let arr = ["봄", "여름", "가을", "겨울"];
+          //   img_path.replace(img_path.slice(-5, -6), txt.slice(-5));
+          $("ul li a").click(function () {
+            let txt = $(this).text();
+            let img_path = $("img").attr("src");
+
+            let arr = ["봄", "여름", "가을", "겨울"];
+            img_path.replace(img_path.slice(-5, -6), txt.slice(-5));
+          });
+
+          //   let txt = $(this).text();
+          //   //let num = txt.slice(-1);
+          //   //let num = txt.substring(5);
+          //   let num = txt.substr(5, 1);
+
+          //   $("#photo img").attr("src", "../images/" + txt + ".jpg");
+          //   console.log(txt);
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <div id="wrap">
+      <div id="nav">
+        <ul>
+          <li><a href="#">photo1</a></li>
+          <li><a href="#">photo2</a></li>
+          <li><a href="#">photo3</a></li>
+          <li><a href="#">photo4</a></li>
+        </ul>
+      </div>
+      <div id="photo">
+        <img src="../images/photo1.jpg" alt="photo1" />
+      </div>
+    </div>
+  </body>
+</html>

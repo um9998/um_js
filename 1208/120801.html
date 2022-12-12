@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="../js/jquery-3.6.1.js"></script>
+    <script src="../../js/text.js"></script>
+    <title>jquery</title>
+  </head>
+  <body>
+    <p>폴더에는</p>
+    <p id="p01">이미지</p>
+    <p id="p02">이미지</p>
+    <p class="txt">css</p>
+    <p class="txt">js</p>
+    <p class="txt">webfonts</p>
+    <div class="txtt">html</div>
+    <div class="jquery">
+      스크립트는 인라인 방식으로 적용되는거라 css보다 우선으로 적용됨 매소드는
+      중첩이 가능함. 속성은 문자라서 "안에" 넣어야함 :으로 css구분할때는 {안에
+      여러개의 속성 한번에 넣기 하나의 단어일 때는 그냥 넣고 두개의 단어일 때는
+      "안에 넣어야함"하나의 단어로 사용하려면 두번째 단어 시작을 대문자로
+      귀찮으면 애지간할 때 다 따옴표 넣어버려라ㅏ }
+    </div>
+    <script>
+      $(function () {
+        $("#p01")
+          .css("color", "#aaf")
+          .css("fontSize", "24px")
+          .css("backgroundColor", "#333");
+        $(".jquery").css({ color: "#338", "font-size": "25px" });
+        $(".txtt").css({
+          color: "#338",
+          fontSize: "25px",
+          backgroundColor: "#eee",
+        });
+      });
+    </script>
+  </body>
+</html>

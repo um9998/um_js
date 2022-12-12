@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="../js/jquery-3.6.1.js"></script>
+    <script>
+      $(function () {
+        $("#set_t").click(function () {
+          $("#t1").text("Hello world");
+        });
+        $("#set_html").click(function () {
+          $("#t2").html("<b>Hello world</b>");
+        }); //태그까지 html처럼 사용 가능
+        // $("#set_val").click(function () {
+        //   $("#t3 input").val("dollyduck");
+        // });
+        let bo = true;
+        $("#set_val").click(function () {
+          if (bo) {
+            $("#t3 input").val("dollyduck");
+          } else {
+            $("#t3 input").val("mickeymouse");
+          }
+          bo = !bo;
+        });
+      });
+    </script>
+    <title>Document</title>
+  </head>
+  <body>
+    <p id="t1">this is paragraph</p>
+    <p id="t2">this is another paragraph</p>
+    <p id="t3">input Field : <input type="text" value="Mickey Mouse" /></p>
+    <button id="set_t">set Text</button>
+    <button id="set_html">set Html</button>
+    <button id="set_val">set value</button>
+  </body>
+</html>

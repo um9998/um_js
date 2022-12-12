@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="../js/jquery-3.6.1.js"></script>
+    <script>
+      $(function () {
+        //$(선택자).show(speed,easing,callback())
+        $("body").append('<div id="div1"></div>');
+        myfnc();
+        function myfnc() {
+          $("#div1").text("p태그의 디스플레이 : " + $("p").css("display"));
+        } // 함수 정해서 넣기
+        myfnc();
+        $("#btn2").click(function () {
+          $("p").hide("1000", "swing", function () {
+            myfnc(); //중괄호 안에 넣을 때는  myfnc()
+          });
+        });
+        $("#btn2").trigger("click"); //함수 강제 실행
+        $("#btn1").click(function () {
+          $("p").show("500", "linear", myfnc);
+          //콜백함수에 넣을 땐  myfnc
+        });
+
+        $("#btn3").click(function () {
+          $("p").toggle("500", function () {
+            myfnc();
+          });
+        });
+      });
+    </script>
+    <style>
+      p {
+        width: 100px;
+        height: 100px;
+        background: #456;
+        color: #fff;
+      }
+    </style>
+    <title>똑같은 함수 반복될때?</title>
+  </head>
+  <body>
+    <p></p>
+    <button id="btn2">hide</button>
+    <button id="btn1">show</button>
+    <button id="btn3">toggle</button>
+    <div></div>
+  </body>
+</html>

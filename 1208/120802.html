@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="../js/jquery-3.6.1.js"></script>
+    <script src="../../js/text.js"></script>
+    <script>
+      $(function () {
+        //$("li:first").css("border", "2px solid #f00");
+        //$("li:first-child").css("border", "2px solid #f00");
+        //$("li:last").css("border", "2px solid #f00");
+        //$("li:even").css("border", "2px solid #f00");
+        //$("div:even").css("border", "2px solid #f00");
+        //$("div:odd").css("border", "2px solid #00f");
+        //$("p:first").css("border", "2px solid #0f0");
+        //$(".container p:first-of-type").css("border", "2px solid #f0f");
+        //(".container p:last-of-type").css("border", "2px solid #0ff");
+        //$("p:nth-last-child(1)").css("border", "2px solid #a5a");p중 마지막중 첫번째
+        // $("p:only-child").css("border", "2px solid #a5a");자식으로있는 p
+        //$("p:only-of-type").css("border", "2px solid #aff");
+        //$(".container > p").css("border", "2px solid #aaf");자식 p
+        //$("ul + p").css("border", "2px solid #546");가장 가까운 p하나
+        //$("ul ~ p").css("border", "2px solid #546");근처에 p 모두
+        //$("li:eq(1)").css("border", "2px solid #378");
+        //$("li:gt(1)").css("border", "2px solid #378");//인덱스번호보다 큰거
+        $("li:lt(1)").css("border", "2px solid #378"); //인덱스번호보다 작은거
+        $("li:not(:lt(1))").css("border", "2px solid #370"); //선택된 인덱스가 아닌애들
+        $("h1:not(:h1(1))").css("border", "2px solid #370"); //선택된 인덱스가 아닌애들
+      });
+    </script>
+    <title>jquery</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>h1태그</h1>
+      <h1>h1태그</h1>
+      <h1>h1태그</h1>
+      <h2>h1태그</h2>
+      <h3>h3태그</h3>
+      <h4>h4태그</h4>
+      <h5>h5태그</h5>
+      <h6>h6태그</h6>
+      <ul>
+        <li>
+          html
+          <p>웹페이지 구조를 만들어용</p>
+        </li>
+        <li>css</li>
+        <li>css3</li>
+        <li>javascript</li>
+        <li>jquery</li>
+      </ul>
+      <p>portfolio1 first-of-type</p>
+      <p>portfolio2</p>
+      <p>portfolio3 last-of-type</p>
+    </div>
+    <div class="div1"><p>문단태그입니다.</p></div>
+    <div class="div1"><p>텍스트와 인라인속성만 올수 있음.</p></div>
+    <div class="div1"><p>중복 사용 x.</p></div>
+  </body>
+</html>

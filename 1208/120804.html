@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="../js/jquery-3.6.1.js"></script>
+    <script src="../../js/text.js"></script>
+    <script>
+      $(function () {
+        //속성선택자
+        //[name = "value"]
+        //$('li[class = "html"]').css("color", "#f0f");
+        //$('img[alt = "photo1"]').css("width", "100px");
+        //$('li[class^= "css"]').css("color", "#f0f"); //li요소중에서 클래스 속성이 css로 시작하는 요소 선택  >> css/css3모두 선택
+        $('img[alt^= "photo"]').css("width", "100px");
+        //$('li[class$="3"]').css("color", "#f0f"); //클래스 이름이 3으로 끝나는 요소 찾기
+        //$('li[class*="as"]').css("color", "#568654"); //클래스 속성중 as가 포함된 요소 찾기'
+        //$(".container").children("p").text("자식요소입니다. ");
+        //$(".html").parent().css("color", "#f0f");
+        //$(".html").parents().css("color", "#f0f");
+        //$(".html").parentsUntil(".container").css("color", "#f0f");
+        //$(".html").next().css("color", "#f0f");
+        //$(".html").nextAll().css("color", "#f0f");
+        //$(".html").nextUntil(".css3").css("color", "#f0f");
+        //$(".jquery").prev().css("color", "#f0f");
+        //$(".jquery").prevAll().css("color", "#f0f");
+        //$(".jquery").prevUntil(".html").css("color", "#f0f");
+        // $(".container .css3").siblings().css("color", "#45f");
+        //선택한것 빼고 선택한것의 모든 형제
+        //$(".container li:not('.css3')").css("color", "#da6");
+        //$(".container li").not(".css").css("color", "#9a9");
+        //$(".container li").filter(".css").css("color", "#f11");
+        //$(".container li").slice(-2, -1).css("color", "#f77");
+        //$(".container li").substr(0, 1).css("color", "#f77");
+        //$(".container li:empty").text("blank");
+        //$(".container li:contains(css)").text("blank");
+        //$(".container:has(p)").text("blank");
+        //$("ul").append('<li class="page">page</li>');
+        //$("ul").prepend('<li class="page">page</li>');
+
+        //$('<li class="page">page</li>').appendTo("ul");
+        //$('<li class="page">page</li>').prependTo("ul");
+        //$(".container").clone().appendTo("body");
+        //$(".container").clone().prependTo("body");
+        //$(".container p").wrap('<div class = "in"></div>');
+        //$(".container p").wrapAll('<div class = "in"></div>');
+        //$(".container p").wrapInner('<div class = "in"></div>');
+        $(".html").after('<li class="after">after</li>');
+        $(".html").before('<li class="before">before</li>');
+        $('<li class="after">insertAfter</li>').insertAfter(".html");
+        $('<li class="before">insertbefore</li>').insertBefore(".html");
+        $(".cs").replaceWith('<li class="replace_css">대체된 서식</li>');
+        $('<li class="replace_css">대체된 서식</li>').replaceAll(".javaxcript");
+      });
+    </script>
+    <title>jquery</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>h1태그</h1>
+      <h2>h1태그</h2>
+      <h3>h3태그</h3>
+      <h4>h4태그</h4>
+      <h5>h5태그</h5>
+      <h6>h6태그</h6>
+      <ul>
+        <li class="html">
+          html
+          <p>웹페이지 구조를 만들어용</p>
+        </li>
+        <li class="css">css</li>
+        <li class="css3">css3</li>
+        <li class="javascript">javascript</li>
+        <li class="jquery">jquery</li>
+        <li class="blank">blank</li>
+      </ul>
+      <p><img src="../images/photo1.jpg" alt="photo1" /></p>
+      <p><img src="../images/photo2.jpg" alt="photo2" /></p>
+      <p>portfolio1 first-of-type</p>
+      <p>portfolio2</p>
+      <p>portfolio3 last-of-type</p>
+    </div>
+    <div class="div1"><p>문단태그입니다.</p></div>
+    <div class="div1"><p>텍스트와 인라인속성만 올수 있음.</p></div>
+    <div class="div1"><p>중복 사용 x.</p></div>
+  </body>
+</html>

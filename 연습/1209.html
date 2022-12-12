@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="../js/jquery-3.6.1.js"></script>
+    <script>
+      $(function () {
+        let i = $("bg").index();
+        $("a").click(function () {
+          $(this).removeClass().addClass("color56a");
+          console.log(this);
+        });
+      });
+      $(function () {
+        $(".bg div").eq(0).addClass("color564");
+        $(".bg div").eq(1).addClass("color566");
+        $(".bg div").eq(2).addClass("color568");
+        $(".bg div").eq(3).addClass("color56a");
+      });
+      $(function () {});
+    </script>
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      ul {
+        list-style: none;
+      }
+      a {
+        text-decoration: none;
+        color: #000;
+      }
+      body {
+        font-family: Arial, Helvetica, 돋움, Doctum, sans-serif;
+      }
+      .wrap {
+        width: 100%;
+        position: relative;
+      }
+      .bg {
+        max-width: 1280px;
+        margin: 0 auto;
+      }
+      .bg > div {
+        width: 100%;
+        height: 300px;
+        position: absolute;
+        color: #fff;
+        font-size: 50px;
+        text-align: center;
+        line-height: 300px;
+      }
+      .btn {
+        width: 100%;
+        position: absolute;
+        display: flex;
+        justify-content: space-between;
+        top: 300px;
+        left: 0;
+      }
+      .btn > li {
+        width: 25%;
+        height: 50px;
+        text-align: center;
+      }
+      .btn > li > a {
+        line-height: 50px;
+        width: 100%;
+        height: 100%;
+        display: block;
+      }
+      .color564 {
+        background-color: #564;
+      }
+      .color566 {
+        background-color: #566;
+      }
+      .color568 {
+        background-color: #568;
+      }
+
+      .color56a {
+        background-color: #56a;
+      }
+      .hidden {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="bg">
+        <div>#564</div>
+        <div>#566</div>
+        <div>#568</div>
+        <div>#56a</div>
+      </div>
+      <ul class="btn">
+        <li><a href="#">#564</a></li>
+        <li><a href="#">#566</a></li>
+        <li><a href="#">#568</a></li>
+        <li><a href="#">#56a</a></li>
+      </ul>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="../js/jquery-3.6.1.js"></script>
+    <script>
+      $(function () {
+        $("p").addClass("red underline");
+
+        $("#remove").click(function () {
+          $("p:even").removeAttr("class");
+        });
+
+        $("#change").click(function () {
+          $("p:odd").removeAttr("class").addClass("bg");
+        });
+
+        $("#reset").click(function () {
+          $("p").removeAttr("class").addClass("red underline");
+        });
+
+        $("#toggle").click(function () {
+          $("p:even").toggleClass("bg_toggle");
+        });
+      });
+    </script>
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      ul {
+        list-style: none;
+      }
+      a {
+        text-decoration: none;
+        color: #ccc;
+      }
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      .red {
+        color: red;
+      }
+      .underline {
+        text-decoration: underline;
+      }
+      .bg {
+        background: #ff0;
+      }
+      .bg_toggle {
+        background: #0f0;
+      }
+    </style>
+  </head>
+  <body>
+    <button id="remove">remove</button>
+    <button id="change">change</button>
+    <button id="reset">초기화</button>
+    <button id="toggle">toggle</button>
+    <p>엘리먼트로부터</p>
+    <p>클래스를</p>
+    <p>추가하고</p>
+    <p>제거하는</p>
+    <p>연습</p>
+  </body>
+</html>

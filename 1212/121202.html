@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="../js/jquery-3.6.1.js"></script>
+    <script>
+      $(function () {
+        $("#btn2").click(function () {
+          $("body").append('<div id="div1"></div>');
+          $("p").hide("1000", function () {
+            //콜백함수
+            $("#div1").text("디스플레이 : " + $("p").css("display"));
+          });
+        });
+        $("#btn1").click(function () {
+          $("p").show("500", function () {
+            //콜백함수
+            $("#div1").text("디스플레이 : " + $("p").css("display"));
+          }); //show.hide는 시간 조절 가능 slow / fast / 밀리세컨드로 시간 줌 1000ms = 1s / 500ms = 0.5s
+        });
+        // $("#btn2").click(function () {
+        //   $("p").css("display","none");
+        // });
+        // $("#btn1").click(function () {
+        //   $("p").css("display","");//display-none/block은 트랜지션 줄 수 없음.
+        // });
+        $("#btn3").click(function () {
+          $("p").toggle("500", function () {
+            //콜백함수
+            $("#div1").text("디스플레이 : " + $("p").css("display"));
+          });
+        });
+      });
+    </script>
+    <style>
+      p {
+        width: 100px;
+        height: 100px;
+        background: #456;
+        color: #fff;
+      }
+    </style>
+    <title>Document</title>
+  </head>
+  <body>
+    <p></p>
+    <button id="btn2">hide</button>
+    <button id="btn1">show</button>
+    <button id="btn3">toggle</button>
+  </body>
+</html>
