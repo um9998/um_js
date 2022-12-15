@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="../js/jquery-3.6.1.js"></script>
+    <script>
+      $(function () {
+        $(".move").click(function () {
+          $("div")
+            .animate(
+              { width: "100px", height: "100px", borderRadius: "0" },
+              1000,
+              "swing"
+            )
+            .animate({ marginLeft: "100px" })
+            .animate({ marginLeft: "200px" });
+        });
+      });
+    </script>
+    <style>
+      div {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        background: #ccc;
+      }
+    </style>
+    <title>keydown</title>
+  </head>
+  <body>
+    <button class="move">move</button>
+    <div></div>
+  </body>
+</html>

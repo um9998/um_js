@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="../js/jquery-3.6.1.js"></script>
+    <script>
+      $(function () {
+        $(".txt1")
+          .animate({ marginLeft: "100px" }, 1000)
+          .animate({ marginLeft: "200px" }, 1000)
+          .animate({ marginLeft: "300px" }, 1000);
+        setInterval(function () {
+          $(".txt3")
+            .animate({ marginLeft: 0 }, 1000)
+            .animate({ marginLeft: "100px" }, 1000)
+            .animate({ marginLeft: 0 }, 1000);
+        });
+      });
+    </script>
+    <style></style>
+    <title>animate</title>
+  </head>
+  <body>
+    <p class="txt1">1</p>
+    <p class="txt2">2</p>
+    <p class="txt3">3</p>
+  </body>
+</html>

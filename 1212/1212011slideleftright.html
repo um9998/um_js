@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="../js/jquery-3.6.1.js"></script>
+    <script>
+      $(function () {
+        //$("#btn2").css("display", "none");
+        //$("#btn2").hide();
+
+        $("#btn1").click(function () {
+          let txt = $(this).text();
+          if (txt == "slideUp") {
+            $("div").slideUp(1000, function () {
+              $("#btn1").text("fadeIn");
+            });
+          } else {
+            $("div").fadeIn(1000, function () {
+              $("#btn1").text("slideUp");
+            });
+          }
+
+          //   let a = true;
+          //   if (a) {
+          //     $("div").slideUp(1000, "linear");
+          //     $("#btn1").text("fadeIn");
+          //   } else {
+          //     $("div").fadeIn(1000, "swing");
+          //     $("#btn1").text("slideUp");
+          //   }
+          //   a = !a;
+        });
+        $("#btn3").click(function () {
+          $("div").slideToggle(1000);
+        });
+        $("#btn4").click(function () {
+          $("div").fadeTo(500, 0.3);
+        });
+        $("#btn5").click(function () {
+          $("div").fadeTo(500, 1);
+        });
+      });
+    </script>
+    <style>
+      div {
+        width: 500px;
+        background: #eee;
+      }
+    </style>
+    <title>slide-메뉴에 많이 사용</title>
+  </head>
+  <body>
+    <p>
+      <button id="btn1">slideUp</button>
+      <!-- <button id="btn2">fadeIn</button> -->
+    </p>
+    <p><button id="btn3">slideToggle</button></p>
+    <p>
+      <button id="btn4">fadeTo(0.3)</button>
+      <button id="btn5">fadeTo(1)</button>
+    </p>
+    <div>
+      Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+      Lorem Ipsum has been the industry's standard dummy text ever since the
+      1500s, when an unknown printer took a galley of type and scrambled it to
+      make a type specimen book.
+    </div>
+    <!-- //slide up > div가 슬라이드 업 > 버튼이fade
+    in으로 바뀌고 fadein 누르면 > div가 페이드 인 > 버튼이 slideup으로 바뀜 -->
+  </body>
+</html>

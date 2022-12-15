@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="../js/jquery-3.6.1.js"></script>
+    <script>
+      $(function () {
+        $("#msgbox").keyup(function () {
+          let num = $(this).val().length;
+          //console.log(num);
+          $("h1").text(150 - num);
+          let a = 150 - num;
+          //console.log(a);
+          if (a >= 0) {
+            $("h1").css("color", "#00f");
+          } else {
+            $("p").text("초과된 글자수");
+            $("h1").css("color", "#f00");
+            $("#status").text(-a + "글자 초과됨");
+          }
+          $("#btn").click(function () {
+            $("textarea").val("");
+            $("h1").text("150").css("color", "#00f");
+            $("#status").text("");
+          });
+        });
+      });
+    </script>
+    <style>
+      h1 {
+        color: blue;
+      }
+      textarea {
+        resize: none;
+      }
+    </style>
+    <title>keyup</title>
+  </head>
+  <body>
+    <p>남은 글자수</p>
+    <h1>150</h1>
+    <textarea name="msg" id="msgbox" cols="30" rows="10"></textarea>
+    <div id="status"></div>
+    <button id="btn">초기화</button>
+  </body>
+</html>

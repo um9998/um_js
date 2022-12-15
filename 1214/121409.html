@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="../js/jquery-3.6.1.js"></script>
+    <script src="../js/jquery-ui.min.js"></script>
+    <script>
+      $(function () {
+        let effect = $(".box").children(".ball").attr("data-ease");
+        console.log(effect);
+        $("button").click(function () {
+          $(".box:first-of-type")
+            .find(".ball")
+            .animate({ left: 480 }, 1000, "linear")
+            .animate({ left: 10 }, 1000, "linear");
+        });
+        $("button").click(function () {
+          $(".box:nth-of-type(2)")
+            .children(".ball")
+            .animate({ left: 480 }, 1000, "swing")
+            .animate({ left: 10 }, 1000, "swing");
+        });
+        $("button").click(function () {
+          $(".box:nth-of-type(3)")
+            .children(".ball")
+            .animate({ left: 480 }, 1000, "easeOutBounce")
+            .animate({ left: 10 }, 1000, "easeOutBounce");
+        });
+      });
+    </script>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      div {
+        width: 550px;
+        border: 1px solid #ccc;
+        position: relative;
+        height: 100px;
+        margin: 10px;
+      }
+      .ball {
+        position: absolute;
+        width: 30px;
+        height: 30px;
+        background-color: #456;
+        border-radius: 50%;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>basic :: animate easing</h1>
+    <button>move</button>
+    <div class="box">
+      linear
+      <div class="ball" data-ease="linear"></div>
+    </div>
+    <!-- <p>linear</p> -->
+    <div class="box">
+      swing
+      <div class="ball" data-ease="swing"></div>
+    </div>
+    <!-- <p>swing</p> -->
+    <div class="box">
+      easeOutBounce
+      <div class="ball" data-ease="easeOutBounce"></div>
+    </div>
+    <!-- <p>easeOutBounce</p> -->
+    <div class="box">
+      easeInQuad
+      <div class="ball" data-ease="easeInQuad"></div>
+    </div>
+    <!-- <p>easeInQuad</p> -->
+    <div class="box">
+      easeInOutExpo
+      <div class="ball" data-ease="easeInOutExpo"></div>
+    </div>
+    <!-- <p>easeInOutExpo</p> -->
+    <!-- <div id="box1"><div class="c circle1" data="linear"></div></div>
+    <div id="box2"><div class="c circle2" data="swing"></div></div>
+    <div id="box3"><div class="c circle3" data="easeOutBounce"></div></div>
+    <div id="box4"><div class="c circle4" data="easeInQuad"></div></div>
+    <div id="box5"><div class="c circle5" data="easeInOutExpo"></div></div> -->
+  </body>
+</html>

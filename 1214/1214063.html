@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="../js/jquery-3.6.1.js"></script>
+    <script src="../js/jquery-ui.min.js"></script>
+    <script>
+      //$(function(){
+      //   $(function(){
+      //     $("button").eq(0).click(function(){
+      //     $(".photo").slideUp(1000,"swing",function(){
+      //         $(this).slideDown(1000,"swing");
+      //     });
+      //     });
+      //     $("button").eq(1).click(function(){
+      //     $(".photo").slideUp(1000,"linear",function(){
+      //         $(this).slideDown(1000,"linear");
+      //     });
+      //     });
+      //     $("button").eq(2).click(function(){
+      //     $(".photo").slideUp(1000,"easeOutQuart",function(){
+      //         $(this).slideDown(1000,"easeOutQuart");
+      //     });
+      //     });
+      //     $("button").eq(3.click(function(){
+      //     $(".photo").slideUp(1000,"easeInOutElastic",function(){
+      //         $(this).slideDown(1000,"easeInOutElastic");
+      //     });
+      //     });
+      //   });
+
+      $(function () {
+        $("button").click(function () {
+          let effect = $(this).attr("data-ease");
+          console.log(effect);
+          $("#box").slideUp(1000, effect, function () {
+            $(this).slideDown(1000, effect);
+          });
+        });
+      });
+    </script>
+    <style>
+      #box {
+        height: 300px;
+        overflow: hidden;
+      }
+      img {
+        height: 300px;
+      }
+      .btn {
+        position: fixed;
+        top: 250px;
+        left: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="box">
+      <img src="../images/photo2.jpg" alt="" />
+    </div>
+    <button id="btn1" data-ease="linear">lear</button>
+    <button id="btn2" data-ease="swing">swf</button>
+    <button id="btn3" data-ease="easeOutBounce">easdunce</button>
+    <button id="btn4" data-ease="easeInQuart">esQuart</button>
+    <button id="btn5" data-ease="easeOutElastic">easedastic</button>
+  </body>
+</html>

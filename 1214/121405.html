@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="../js/jquery-3.6.1.js"></script>
+    <script src="../js/jquery-ui.min.js"></script>
+    <script>
+      $(function () {
+        $("#btn1").click(function () {
+          $("#box").animate({ height: "0" }, 1000, "linear");
+        });
+        $("#btn2").click(function () {
+          $("#box").animate({ height: "300px" }, 1000, "swing");
+        });
+        $("#btn3").click(function () {
+          $("#box").animate({ height: "0" }, 1000, "easeOutBounce");
+        });
+        $("#btn4").click(function () {
+          $("#box").animate({ height: "300px" }, 1000, "easeInQuart");
+        });
+        $("#btn5").click(function () {
+          $("#box").animate({ height: "0" }, 1000, "easeOutElastic");
+        });
+      });
+    </script>
+    <style>
+      #box {
+        height: 300px;
+        overflow: hidden;
+      }
+      img {
+        height: 300px;
+      }
+      .btn {
+        position: fixed;
+        top: 250px;
+        left: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="box">
+      <img src="../images/photo2.jpg" alt="" />
+    </div>
+    <button id="btn1">linear</button>
+    <button id="btn2">swing</button>
+    <button id="btn3">easeOutBounce</button>
+    <button id="btn4">easeInQuart</button>
+    <button id="btn5">easeOutElastic</button>
+  </body>
+</html>

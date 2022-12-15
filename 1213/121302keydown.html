@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="../js/jquery-3.6.1.js"></script>
+    <script>
+      $(function () {
+        $(".left").click(function () {
+          $("div").css("left", "-=10px"); //left = left-10px == left-=10px
+          let a = $(this).text();
+          $("input").val(a);
+        });
+        $(".right").click(function () {
+          $("div").css("left", "+=10px"); //left = left-10px == left-=10px
+          let b = $(this).text();
+          $("input").val(b);
+        });
+        $(".top").click(function () {
+          $("div").css("top", "-=10px"); //left = left-10px == left-=10px
+          let c = $(this).text();
+          $("input").val(c);
+        });
+        $(".bottom").click(function () {
+          $("div").css("top", "+=10px"); //left = left-10px == left-=10px
+          let d = $(this).text();
+          $("input").val(d);
+        });
+        $(document).keyup(function (e) {
+          if (e.keyCode == 37) {
+            $("div").css("left", "-=10px");
+            $("input").val("left");
+          } else if (e.keyCode == 38) {
+            $("div").css("top", "-=10px");
+            $("input").val("top");
+          } else if (e.keyCode == 39) {
+            $("div").css("left", "+=10px");
+            $("input").val("right");
+          } else if (e.keyCode == 40) {
+            $("div").css("top", "+=10px");
+            $("input").val("bottom");
+          }
+        });
+      });
+    </script>
+    <style>
+      div {
+        position: relative;
+        top: 100px;
+        left: 100px;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        background: #567;
+      }
+    </style>
+    <title>keydown</title>
+  </head>
+  <body>
+    <input type="text" id="txt" /><br />
+    <button class="left">left</button>
+    <button class="right">right</button>
+    <button class="top">top</button>
+    <button class="bottom">bottom</button>
+    <div></div>
+  </body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="../js/jquery-3.6.1.js"></script>
+    <script src="../js/jquery-3.6.1.min.js"></script>
+    <script>
+      $(function () {
+        function myfnc() {
+          $("div")
+            .animate({ top: "-5px" }, 500, "linear")
+            .animate({ top: "5px" }, 500, "linear");
+        }
+        let interval = setInterval(myfnc, 1000);
+        let status = true;
+        $("button").click(function () {
+          if (status) {
+            $(this).text("play");
+            clearInterval(interval);
+          } else {
+            $(this).text("stop");
+            interval = setInterval(myfnc, 1000);
+          }
+          status = !status;
+        });
+      });
+    </script>
+    <style>
+      body {
+        width: 100px;
+        text-align: center;
+        margin: 30px auto;
+      }
+      div {
+        position: relative;
+        margin: 15px auto;
+        width: 0;
+        border-top: 20px solid transparent;
+        border-left: 20px solid transparent;
+        border-right: 20px solid transparent;
+        border-bottom: 20px solid #000;
+      }
+    </style>
+    <title>animate</title>
+  </head>
+  <div></div>
+  <button>stop</button>
+</html>

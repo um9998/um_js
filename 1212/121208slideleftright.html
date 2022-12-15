@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="../js/jquery-3.6.1.js"></script>
+    <script>
+      $(function () {
+        $("body").prepend('<div id = "page"></div>');
+        $("#btn1").click(function () {
+          $("p").css("width", "0");
+        });
+        $("#btn2").click(function () {
+          $("p").css("width", "100px");
+        });
+        let bo = true;
+        $("#btn3").click(function () {
+          if (bo) {
+            $("p").css("width", "0");
+          } else {
+            $("p").css("width", "100px");
+          }
+          bo = !bo;
+        });
+        function myfnc() {
+          $("#page").text("display :" + $("p").css("display"));
+        }
+      });
+    </script>
+    <style>
+      p {
+        width: 100px;
+        height: 100px;
+        background: #456;
+        color: #fff;
+        transition: 1s;
+      }
+    </style>
+    <title>slide-메뉴에 많이 사용</title>
+  </head>
+  <body>
+    <p></p>
+    <button id="btn1">slideleft</button>
+    <button id="btn2">slideright</button>
+    <button id="btn3">slideToggle</button>
+  </body>
+</html>

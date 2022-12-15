@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="../js/jquery-3.6.1.js"></script>
+    <script>
+      //$(function () {
+      $(function () {
+        // $("#btn").click(function () {
+        //   $("#box")
+        //     .css("backgroundColor", "#567")
+        //     .animate({ width: "400px", height: "150px" }, 1000);
+        // });
+        let wd = $("#box").width();
+        console.log(wd);
+        let status = true;
+        $("#btn").click(function () {
+          if (status) {
+            $("#box")
+              .animate({ width: wd * 2 }, 1000, "swing")
+              .addClass("on");
+          } else {
+            $("#box")
+              .animate({ width: "300px" }, 1000, "swing")
+              .removeClass("on");
+          }
+          status = !status;
+        });
+      });
+    </script>
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      div {
+        margin: 10px;
+        border-radius: 10px;
+        width: 300px;
+        color: #ccc;
+        background-color: #987;
+        padding: 30px;
+      }
+      button {
+        margin: 10px;
+      }
+      p {
+        margin-top: 20px;
+      }
+      /* 클래스 추가 */
+      #box.on {
+        background-color: #657;
+        color: #fff;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="box">
+      <h2>Anmimate</h2>
+      <p>
+        Lorem Ipsum is simply dummy text of the printing and typesetting
+        industry. Lorem Ipsum has been the industry's standard dummy text ever
+        since the 1500s, when an unknown printer took a galley of type and
+        scrambled it to make a type specimen book.
+      </p>
+    </div>
+    <button id="btn">toggle effect</button>
+  </body>
+</html>

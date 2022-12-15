@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="../js/jquery-3.6.1.js"></script>
+    <script src="../js/jquery-ui.min.js"></script>
+    <script>
+      $(function () {
+        $("button").click(function () {
+          $(".c")
+            .eq(0)
+            .animate({ left: 500 }, 1000, "linear", function () {
+              $(this).animate(
+                { left: 0, backgroundColor: "#45a" },
+                1000,
+                "linear"
+              );
+            });
+          $(".c")
+            .eq(1)
+            .animate({ left: 500 }, 1000, "swing", function () {
+              $(this).animate(
+                { left: 0, backgroundColor: "#56b" },
+                1000,
+                "swing"
+              );
+            });
+          $(".c")
+            .eq(2)
+            .animate({ left: 500 }, 1000, "easeOutBounce", function () {
+              $(this).animate(
+                { left: 0, backgroundColor: "#67c" },
+                1000,
+                "easeOutBounce"
+              );
+            });
+          $(".c")
+            .eq(3)
+            .animate({ left: 500 }, 1000, "easeInQuad", function () {
+              $(this).animate(
+                { left: 0, backgroundColor: "#78d" },
+                1000,
+                "easeInQuad"
+              );
+            });
+          $(".c")
+            .eq(4)
+            .animate({ left: 500 }, 1000, "easeInOutExpo", function () {
+              $(this).animate(
+                { left: 0, backgroundColor: "#89e" },
+                1000,
+                "easeInOutExpo"
+              );
+            });
+        });
+      });
+    </script>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      div {
+        width: 550px;
+        border: 1px solid #ccc;
+        position: relative;
+        height: 100px;
+        margin: 10px;
+        display: grid;
+        align-content: center;
+      }
+      .c {
+        width: 30px;
+        height: 30px;
+        background-color: #456;
+        border-radius: 50%;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>basic :: animate easing</h1>
+
+    <!-- <select name="ease" id="ease">
+      <option value="linear">linear</option>
+      <option value="swing">swing</option>
+      <option value="easeOutBounce">easeOutBounce</option>
+      <option value="easeInQuad">easeInQuad</option>
+      <option value="easeInOutExpo">easeInOutExpo</option>
+      <option value="easeInOutSine">easeInOutSine</option>
+    </select> -->
+    <button>move</button>
+    <div id="box1">
+      <div class="c"></div>
+    </div>
+    <p>linear</p>
+    <div id="box2">
+      <div class="c"></div>
+    </div>
+    <p>swing</p>
+    <div id="box3">
+      <div class="c"></div>
+    </div>
+    <p>easeOutBounce</p>
+    <div id="box4">
+      <div class="c"></div>
+    </div>
+    <p>easeInQuad</p>
+    <div id="box5">
+      <div class="c"></div>
+    </div>
+    <p>easeInOutExpo</p>
+    <!-- <div id="box1"><div class="c circle1" data="linear"></div></div>
+    <div id="box2"><div class="c circle2" data="swing"></div></div>
+    <div id="box3"><div class="c circle3" data="easeOutBounce"></div></div>
+    <div id="box4"><div class="c circle4" data="easeInQuad"></div></div>
+    <div id="box5"><div class="c circle5" data="easeInOutExpo"></div></div> -->
+  </body>
+</html>

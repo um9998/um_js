@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="../js/jquery-3.6.1.js"></script>
+    <script>
+      $(function () {
+        $("#btn1").click(function () {
+          $("p").animate({ width: "0" }, 1000);
+        });
+        $("#btn2").click(function () {
+          $("p").animate({ width: "300px" }, 1000);
+        });
+        $("#btn3").click(function () {
+          $("p").slideUp();
+        });
+        $("#btn4").click(function () {
+          $("p").slideDown();
+        });
+      });
+    </script>
+    <style>
+      p {
+        width: 300px;
+        overflow: hidden;
+      }
+      img {
+        width: 300px;
+      }
+      .btn {
+        position: fixed;
+        top: 250px;
+        left: 0;
+      }
+    </style>
+    <title>animate</title>
+  </head>
+  <body>
+    <div class="wrap">
+      <p><img src="../images/photo1.jpg" alt="" /></p>
+    </div>
+
+    <div class="btn">
+      <button id="btn1">slideleft</button>
+      <button id="btn2">slideright</button>
+      <button id="btn3">slideup</button>
+      <button id="btn4">slidedown</button>
+    </div>
+  </body>
+</html>

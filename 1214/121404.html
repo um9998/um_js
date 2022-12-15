@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="../js/jquery-3.6.1.js"></script>
+    <script src="../js/jquery-ui.min.js"></script>
+    <script>
+      $(function () {
+        $("#draggable").draggable();
+      });
+      $(function () {
+        $("#draggable").draggable();
+        $("#droppable").droppable({
+          drop: function (event, ui) {
+            $(this).addClass("ui-state-highlight").find("p").html("Dropped!");
+          },
+        });
+      });
+      $(function () {
+        $("#sortable").sortable();
+      });
+    </script>
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      #draggable {
+        width: 150px;
+        height: 150px;
+        padding: 0.5em;
+      }
+      #droppable {
+        width: 150px;
+        height: 150px;
+        padding: 0.5em;
+        float: left;
+        margin: 10px;
+        border: 1px solid #ccc;
+      }
+
+      #sortable {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        width: 60%;
+      }
+      #sortable li {
+        margin: 0 3px 3px 3px;
+        padding: 0.4em;
+        padding-left: 1.5em;
+        font-size: 1.4em;
+        height: 18px;
+      }
+      #sortable li span {
+        position: absolute;
+        margin-left: -1.3em;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="draggable" class="ui-widget-content">
+      <p>Drag me to my target</p>
+    </div>
+
+    <div id="droppable" class="ui-widget-header">
+      <p>Drop here</p>
+    </div>
+
+    <ul id="sortable">
+      <li class="ui-state-default">
+        <span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 1
+      </li>
+      <li class="ui-state-default">
+        <span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 2
+      </li>
+      <li class="ui-state-default">
+        <span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 3
+      </li>
+      <li class="ui-state-default">
+        <span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 4
+      </li>
+      <li class="ui-state-default">
+        <span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 5
+      </li>
+      <li class="ui-state-default">
+        <span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 6
+      </li>
+      <li class="ui-state-default">
+        <span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 7
+      </li>
+    </ul>
+  </body>
+</html>

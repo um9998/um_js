@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="../js/jquery-3.6.1.js"></script>
+    <script src="../js/jquery-ui.min.js"></script>
+    <script>
+      $(function () {
+        $("button").click(function () {
+          let effect = $("select > option:selected").val();
+          console.log(effect);
+          $("#circle").animate({ left: 500 }, 1000, effect, function () {
+            $(this).animate({ left: 0 }, 1000, effect);
+          });
+        });
+      });
+    </script>
+    <style>
+      #circle {
+        position: relative;
+        width: 30px;
+        height: 30px;
+        background-color: #456;
+        border-radius: 50%;
+        margin-top: 50px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>basic :: animate easing</h1>
+
+    <select name="ease" id="ease">
+      <option value="linear">linear</option>
+      <option value="swing">swing</option>
+      <option value="easeOutBounce">easeOutBounce</option>
+      <option value="easeInQuad">easeInQuad</option>
+      <option value="easeInOutExpo">easeInOutExpo</option>
+      <option value="easeInOutSine">easeInOutSine</option>
+    </select>
+    <button>move</button>
+    <div id="box"><div id="circle"></div></div>
+  </body>
+</html>

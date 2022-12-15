@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="../js/jquery-3.6.1.js"></script>
+    <script>
+      $(function () {
+        $("body").prepend(
+          " <p><span id='stop'>정지</span><span id='start'>시작</span></p>"
+        );
+        $("span").css({ cursor: "pointer", marginRight: "10px" });
+        let a = "<div>hello</div>";
+        $("body").append(a);
+        let interv = setInterval(function () {
+          $("body").append(a);
+        }, 1000);
+
+        $("#stop").click(function () {
+          clearInterval(interv);
+        });
+        $("#start").click(function () {
+          interv = setInterval(function () {
+            $("body").append(a);
+          }, 1000);
+        });
+      });
+    </script>
+    <style></style>
+    <title>animate</title>
+  </head>
+  <body></body>
+</html>
