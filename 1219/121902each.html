@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>focus</title>
+    <script src="../js/jquery-3.6.1.min.js"></script>
+    <script src="../js/jquery-ui.min.js"></script>
+    <script>
+      $(function () {
+        // $("button").click(function () {
+        //   $("li").eq(0).css("backgroundColor", "#f00");
+        //   $("li").eq(1).css("backgroundColor", "#0f0");
+        //   $("li").eq(2).css("backgroundColor", "#00f");
+        //   $("li").eq(3).css("backgroundColor", "#0ff");
+        // });
+        $("li").each(function () {
+          $(this).css("backgroundColor", $(this).text());
+        });
+        $("li").css("cursor", "pointer");
+        $("li").click(function () {
+          let bg = $(this).text();
+          console.log(bg);
+          $("body").animate({ backgroundColor: bg }, 1000);
+          //   $(this).each(function (index, element) {
+          //     console.log(index);
+          //     console.log(element);
+          //     let num = $(this).data("test");
+          //     console.log(num);
+          //   });
+        });
+      });
+    </script>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      ul {
+        list-style: none;
+        display: flex;
+      }
+      li {
+        width: 100px;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <ul>
+      <li data-text="11">#456</li>
+      <li data-text="22">#789</li>
+      <li data-text="33">#458</li>
+      <li data-text="44">#758</li>
+    </ul>
+  </body>
+</html>

@@ -1,0 +1,40 @@
+@charset "utf-8";
+* {
+  margin: 0;
+  padding: 0;
+}
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+body {
+  font: 1em Arial, "맑은 고딕", 돋움, Doctum, sans-serif;
+}
+#wrap {
+  width: 640px;
+  height: 400px;
+  margin: 0 auto;
+  background: #e3e3e3;
+  text-align: center;
+}
+#bigim {
+  width: 600px;
+  margin: 0 auto;
+}
+#bigim > img {
+  width: 600px;
+  height: 300px;
+  object-fit: cover;
+}
+.gallery img {
+  width: 100px;
+  border: 2px solid #afafaf;
+}
+.gallery img:hover {
+  border: 2px solid #456;
+}
+.gallery img.on {
+  border-color: orange;
+}

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="../js/jquery-3.6.1.js"></script>
+    <script src="../js/jquery-ui.min.js"></script>
+    <script>
+      $(function () {
+        $(".sub").hide();
+        let current; //변수를 만들고 초기값을 안넣은 상태
+        let num; //변수를 만들고 초기값을 안넣은 상태
+        function firstmenu() {
+          //클릭하지 않아도 첫 번째 메뉴를 실행시키는 함수
+          //   $("#navi > li").eq(0).find("ul").slideDown(); //#navi의 첫번째(0)li의 ul을 찾아서 슬라이드 다운
+          // } // eq의 숫자를 바꾸면 열려있는 메뉴가 바뀜.. > 0/1/2를 각각 넣지 말고 current를 넣음
+          $("#navi > li").eq(current).find("ul").slideDown(); //#navi의 첫번째(0)li의 ul을 찾아서 슬라이드 다운
+        } // eq의 숫자를 바꾸면 열려있는 메뉴가 바뀜.. > 0/1/2를 각각 넣지 말고 current를 넣음
+        function init(n) {
+          //firstmenu() 호출, 매개변수가 꼭 필요함
+          current = n;
+          num = n;
+          setTimeout(firstmenu, 500); //딱한번만 실행 settimeout
+        }
+        init(0);
+        $(".title").click(function () {
+          if ($(this).parent("li").index() != num) {
+            num = $(this).parent("li").index();
+            //(this).parent()>#navi의 li
+            $(".sub").slideUp();
+            $(this).next().slideDown();
+          } else {
+            $(".sub").slideUp();
+          }
+        });
+      });
+    </script>
+    <title>Document</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      ul {
+        list-style: none;
+      }
+      a {
+        text-decoration: none;
+      }
+      body {
+        font: 1em Arial, 돋움, sans-serif;
+      }
+      ul#navi {
+        width: 200px;
+        margin: 0 atuo;
+        text-indent: 10px;
+        /* text-indent 글자 들여쓰기  */
+      }
+      #navi > li {
+        margin-bottom: 3px;
+        /*  >> title이 뭉쳐서 한 덩어리처럼 보이기 때문에 css에 #navi>li에 margin-bottom 추가 */
+      }
+      div.title {
+        height: 35px;
+        line-height: 35px;
+        cursor: pointer;
+        background: #9ab92e;
+      }
+      div.title.on {
+        background: #6c8532;
+      }
+      /*스크립트에서 on클래스 추가하면 들어가는 속성 "반드시 붙여서 쓰기!" */
+      .sub li {
+        height: 35px;
+        line-height: 35px;
+        background-color: #f4f4f4;
+        cursor: pointer;
+      }
+      .sub li a {
+        /* li에 적용하지 말고 a에 적용해야함 */
+        width: 100%;
+        /* 부모의 넓이 찾아옴 a(width:100%) > sub > li > nav(width:200px) */
+        color: #000;
+        display: block;
+        /* a전체에 하이라이트 들어갈수 있도록 블록 태그로 만들어줌  */
+      }
+      .sub li a:hover {
+        background: #cf0;
+      }
+    </style>
+  </head>
+  <body>
+    <ul id="navi">
+      <li>
+        <div class="title">title</div>
+        <ul class="sub">
+          <li><a href="#">sub11</a></li>
+          <li><a href="#">sub22</a></li>
+          <li><a href="#">sub33</a></li>
+          <li><a href="#">sub44</a></li>
+        </ul>
+      </li>
+      <li>
+        <div class="title">title</div>
+        <ul class="sub">
+          <li><a href="#">sub11</a></li>
+          <li><a href="#">sub22</a></li>
+          <li><a href="#">sub33</a></li>
+          <li><a href="#">sub44</a></li>
+        </ul>
+      </li>
+      <li>
+        <div class="title">title</div>
+        <ul class="sub">
+          <li><a href="#">sub11</a></li>
+          <li><a href="#">sub22</a></li>
+          <li><a href="#">sub33</a></li>
+          <li><a href="#">sub44</a></li>
+        </ul>
+      </li>
+      <li>
+        <div class="title">title</div>
+        <ul class="sub">
+          <li><a href="#">sub11</a></li>
+          <li><a href="#">sub22</a></li>
+          <li><a href="#">sub33</a></li>
+          <li><a href="#">sub44</a></li>
+        </ul>
+      </li>
+    </ul>
+  </body>
+</html>

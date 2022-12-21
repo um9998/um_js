@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="../js/jquery-3.6.1.js"></script>
+    <script src="../js/jquery-ui.min.js"></script>
+
+    <script>
+      $(function () {
+        let i = 1;
+        $("button").click(function () {
+          if (!$(".txt").is(":animated")) {
+            //txt클래스를 갖고 있는 요소가 애니메이션 중이면 동작하지 않는다
+            if ($(this).hasClass("back")) {
+              i--;
+              if (i < 1) {
+                i = 1;
+                return false;
+                //exit 함수종료
+              }
+              $(".txt").animate({ marginLeft: "-=10%" }, 300);
+            } else {
+              i++;
+              if (i > 10) {
+                i = 10;
+                return false;
+              }
+              $(".txt").animate({ marginLeft: "+=10%" }, 300);
+            }
+          }
+        });
+      });
+    </script>
+    <style>
+      * {
+        margin: 0;
+
+        padding: 0;
+      }
+      body {
+        background-color: rgba(0, 0, 0, 0.5);
+        margin-top: 25px;
+        margin-left: 50px;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      .container {
+        width: 600px;
+        border: 1px solid #ccc;
+      }
+      .btn {
+        margin: 30px 0;
+      }
+      .txt {
+        width: 10%;
+        background-color: #958;
+        text-align: center;
+        color: #fff;
+      }
+    </style>
+  </head>
+  <body>
+    <p class="btn">
+      <button class="go">go</button>
+      <button class="back">back</button>
+    </p>
+    <div class="container">
+      <div class="txt">내용1</div>
+    </div>
+  </body>
+</html>

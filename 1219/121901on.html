@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>focus</title>
+    <script src="../js/jquery-3.6.1.min.js"></script>
+    <script src="../js/jquery-ui.min.js"></script>
+    <script>
+      $(function () {
+        // $("button").on("mouseover focus", function () {
+        //   $("div").css("backgroundColor", "#ff0");
+        // });
+        // $("button").on({
+        //   mouseover: function () {
+        //     $("div").css("backgroundColor", "#00f");
+        //   },
+        //   focus: function () {
+        //     $("div").css("backgroundColor", "#0f0");
+        //   },
+        // });
+        let n = 0;
+        $("div").on("click", function () {
+          $(this).width(200).css("cursor", "pointer");
+          $("div").on("click", function () {
+            $(this).width($(this).width() * 2);
+            n++;
+            console.log(n);
+            if (n >= 3) {
+              $(this).off();
+              n = 0;
+            }
+          });
+        });
+        $("div").trigger("click");
+      });
+    </script>
+    <style>
+      div {
+        width: 100px;
+        height: 100px;
+        border: 1px solid #f00;
+        transition: 1s;
+      }
+    </style>
+  </head>
+  <body>
+    <button></button>
+    <div></div>
+  </body>
+</html>

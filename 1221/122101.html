@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="../js/jquery-3.6.1.js"></script>
+    <script src="../js/jquery-ui.min.js"></script>
+    <script>
+      $(function () {
+        $(".sub").hide();
+        //.sub 를 안보이도록 1. .hide() 2. .css("display", "none")display none
+        //>> title이 뭉쳐서 한 덩어리처럼 보이기 때문에 css에 #navi>li에 margin-bottom 추가
+        $(".title").click(function () {
+          //클릭할때의 실행 구문 : 각 타이틀 아래의 .sub가 열리도록 하는 구문
+          $(".sub").hide(); // 기존에 적용되어있을지도 모르는 속성 없애기 위해 일단 hide먼저 줌
+          $(this).next().show();
+          // 클릭한 요소 (this)=title ,의 다음요소 .next() = .sub를 보이게 함 show() //.next() 다음요소 - .prev() 이전요소
+          //$(this).next().css("display","block")
+        });
+      });
+    </script>
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      ul {
+        list-style: none;
+      }
+      a {
+        text-decoration: none;
+      }
+      body {
+        font: 1em Arial, 돋움, sans-serif;
+      }
+      ul#navi {
+        width: 200px;
+        margin: 0 atuo;
+        text-indent: 10px;
+        /* text-indent 글자 들여쓰기  */
+      }
+      #navi > li {
+        margin-bottom: 3px;
+        /*  >> title이 뭉쳐서 한 덩어리처럼 보이기 때문에 css에 #navi>li에 margin-bottom 추가 */
+      }
+      div.title {
+        height: 35px;
+        line-height: 35px;
+        cursor: pointer;
+        background: #9ab92e;
+      }
+      div.title.on {
+        background: #6c8532;
+      }
+      /*스크립트에서 on클래스 추가하면 들어가는 속성 "반드시 붙여서 쓰기!" */
+      .sub li {
+        height: 35px;
+        line-height: 35px;
+        background-color: #f4f4f4;
+        cursor: pointer;
+      }
+      .sub li a {
+        /* li에 적용하지 말고 a에 적용해야함 */
+        width: 100%;
+        /* 부모의 넓이 찾아옴 a(width:100%) > sub > li > nav(width:200px) */
+        color: #000;
+        display: block;
+        /* a전체에 하이라이트 들어갈수 있도록 블록 태그로 만들어줌  */
+      }
+      .sub li a:hover {
+        background: #cf0;
+      }
+    </style>
+  </head>
+  <body>
+    <ul id="navi">
+      <li>
+        <div class="title">title</div>
+        <ul class="sub">
+          <li><a href="#">sub11</a></li>
+          <li><a href="#">sub22</a></li>
+          <li><a href="#">sub33</a></li>
+          <li><a href="#">sub44</a></li>
+        </ul>
+      </li>
+      <li>
+        <div class="title">title</div>
+        <ul class="sub">
+          <li><a href="#">sub11</a></li>
+          <li><a href="#">sub22</a></li>
+          <li><a href="#">sub33</a></li>
+          <li><a href="#">sub44</a></li>
+        </ul>
+      </li>
+      <li>
+        <div class="title">title</div>
+        <ul class="sub">
+          <li><a href="#">sub11</a></li>
+          <li><a href="#">sub22</a></li>
+          <li><a href="#">sub33</a></li>
+          <li><a href="#">sub44</a></li>
+        </ul>
+      </li>
+      <li>
+        <div class="title">title</div>
+        <ul class="sub">
+          <li><a href="#">sub11</a></li>
+          <li><a href="#">sub22</a></li>
+          <li><a href="#">sub33</a></li>
+          <li><a href="#">sub44</a></li>
+        </ul>
+      </li>
+    </ul>
+  </body>
+</html>

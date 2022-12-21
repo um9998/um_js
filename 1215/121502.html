@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="../js/jquery-3.6.1.js"></script>
+    <script src="../js/jquery-ui.min.js"></script>
+
+    <script>
+      $(function () {
+        let i = 1;
+        $("#go").click(function () {
+          i++;
+          console.log(i);
+          if (i <= 10) {
+            $(".txt").animate({ marginLeft: "+=10%" }, 300);
+          }
+        });
+
+        $("#back").click(function () {
+          i--;
+          console.log(i);
+          if (i >= 1) {
+            $(".txt").animate({ marginLeft: "-=10%" }, 300);
+          }
+        });
+      });
+    </script>
+    <style>
+      * {
+        margin: 0;
+
+        padding: 0;
+      }
+      body {
+        background-color: rgba(0, 0, 0, 0.5);
+        margin-top: 25px;
+        margin-left: 50px;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      .container {
+        width: 600px;
+        border: 1px solid #ccc;
+      }
+      .btn {
+        margin: 30px 0;
+      }
+      .txt {
+        width: 10%;
+        background-color: #958;
+        text-align: center;
+        color: #fff;
+      }
+    </style>
+  </head>
+  <body>
+    <p class="btn">
+      <button id="go">go</button>
+      <button id="back">back</button>
+    </p>
+    <div class="container">
+      <div class="txt">내용1</div>
+    </div>
+  </body>
+</html>
