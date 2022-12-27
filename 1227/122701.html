@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      #wrap {
+        width: 80%;
+        margin: 0 auto;
+      }
+      #box_a {
+        height: 400px;
+        background: #aaa;
+      }
+      #box_b {
+        float: left;
+        width: 50%;
+        height: 400px;
+        background: #bbb;
+      }
+      #box_c {
+        float: right;
+        width: 50%;
+        height: 400px;
+        background: #ccc;
+      }
+      @media screen and (max-width: 1024px) {
+        #wrap {
+          width: 90%;
+        }
+      }
+      @media screen and (max-width: 768px) {
+        #wrap {
+          width: 100%;
+        }
+      }
+      @media screen and (max-width: 480px) {
+        #box_b {
+          float: none;
+          width: 100%;
+        }
+        #box_c {
+          float: none;
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="wrap">
+      <div id="box_a"></div>
+      <div id="box_b"></div>
+      <div id="box_c"></div>
+    </div>
+  </body>
+</html>

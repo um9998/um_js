@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        width: 5000px;
+        height: 5000px;
+        overflow: hidden;
+      }
+      #wrap {
+        position: fixed;
+        top: 10px;
+        left: 10px;
+      }
+    </style>
+    <script src="../js/jquery-3.6.1.min.js"></script>
+    <script>
+      $(function () {
+        $(window).on("scroll mousewheel", function () {
+          let sc_top = $(this).scrollTop();
+          let sc_left = $(this).scrollLeft();
+          $(".top").text(sc_top);
+          $(".left").text(sc_left);
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <div id="wrap">
+      <p>scrollTop : <span class="top">0</span>px</p>
+      <p>scrollLeft : <span class="left">0</span>px</p>
+    </div>
+  </body>
+</html>
